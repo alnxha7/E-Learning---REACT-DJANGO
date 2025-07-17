@@ -1,0 +1,112 @@
+.login-container {
+  min-height: 85vh;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-card {
+  background: #ffffff;
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 123, 255, 0.2);
+  max-width: 400px;
+  width: 100%;
+  transform: perspective(1000px) rotateX(0deg);
+  transition: transform 0.4s;
+}
+
+.login-card:hover {
+  transform: perspective(1000px) rotateX(3deg);
+}
+
+.login-heading {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-form input {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-form input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.login-form button {
+  padding: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  background-size: 200%;
+  background-image: linear-gradient(90deg, #007bff, #00c6ff, #007bff);
+  color: #fff;
+  cursor: pointer;
+  transition: background-position 0.6s ease, transform 0.25s ease;
+}
+
+.login-form button:hover {
+  background-position: 100%;
+  transform: scale(1.05);
+}
+
+/* heading badge (reuse) */
+.login-heading {
+  background-color: #264b8c;
+  color: #fff;
+  padding: 13px 24px;
+  border-radius: 14px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  box-shadow: 0 6px 14px rgba(0,0,0,.25);
+  margin-bottom: 30px;
+}
+
+/* center it */
+.login-container {
+  min-height: 85vh;
+  background: linear-gradient(120deg,#e0eafc,#cfdef3 60%,#e7efff);
+  display: flex;
+  flex-direction: column;     /* column so heading stacks on top */
+  align-items: center;
+  justify-content: center;
+  padding: 40px 15px;
+}
+
+
+@media (max-width: 480px) {
+  .register-form {
+    padding: 38px 26px;
+  }
+  .register-container h2 {
+    font-size: 1.7rem;
+  }
+}

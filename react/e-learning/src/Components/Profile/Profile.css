@@ -1,0 +1,70 @@
+.profile-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #f8fbff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.profile-title {
+  font-size: 2rem;
+  color: #264b8c;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.profile-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.profile-info p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.password-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.password-form h3 {
+  color: #264b8c;
+  margin-bottom: 20px;
+}
+
+.password-form input {
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.toggle-password {
+  margin-bottom: 16px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.change-btn {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  align-self: flex-start;
+  transition: 0.3s ease;
+}
+
+.change-btn:hover {
+  background: #0056b3;
+}

@@ -1,0 +1,137 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Vibrant Gradient Background */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Logo + Brand */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 45px;
+  margin-right: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Nav Links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.4s ease;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: -4px;
+  background: #00f0ff;
+  border-radius: 10px;
+  transition: width 0.4s ease-in-out;
+}
+
+.navbar-links a:hover {
+  color: #00f0ff;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* Auth Buttons */
+.navbar-auth {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Register Button - Glow */
+.register {
+  background: #00f0ff;
+  color: #000;
+  box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+}
+
+.register:hover {
+  background: #00d2d3;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00f0ff;
+}
+
+/* Login Button - Slide Fill */
+.login {
+  background: transparent;
+  color: #00f0ff;
+  border: 2px solid #00f0ff;
+  position: relative;
+  overflow: hidden;
+}
+
+.login::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background: #00f0ff;
+  z-index: -1;
+  transition: width 0.4s;
+}
+
+.login:hover {
+  color: black;
+}
+
+.login:hover::before {
+  width: 100%;
+}
