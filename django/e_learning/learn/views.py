@@ -113,3 +113,29 @@ def enroll_course(request):
     
     except Exception as e:
         return Response({"detail": str(e)}, status=500)
+    
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def enroll_status(request):
+    course_id = request.GET.get('course_id')
+    if not course_id:
+        return Response({'enrolled': False})
+
+    enrolled = Students.objects.filter(user=request.user, course_id=course_id).exists()
+    return Response({'enrolled': enrolled})
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def my_courses(request):
+    student_courses = Students.objects.filter(user=request.user).select_related('course')
+    data = []
+
+    for student in student_courses:
+        course = student.course
+        course_data = CourseSerializer(course, context={'request': request}).data
+        course_data['start_date'] = student.date.strftime('%Y-%m-%d')
+        data.append(course_data)
+
+    print(data)  # Debug line
+
+    return Response(data)

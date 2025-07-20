@@ -36,6 +36,9 @@ urlpatterns = [
     path('api/change-password/', views.change_password, name='change_password'),
 
     path('api/enroll/', views.enroll_course, name='enroll_course'),
+    path('api/enroll-status/', views.enroll_status, name='enroll_status'),
+
+    path('api/my-courses/', views.my_courses, name='my-courses'),
 ]
 
 if settings.DEBUG:

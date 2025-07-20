@@ -9,12 +9,34 @@ const CourseDetail = () => {
   const { id } = useParams();
   const [course, setCourse] = useState(null);
   const timerRef = useRef(null);
+  const [isEnrolled, setIsEnrolled] = useState(false);
+
 
   useEffect(() => {
     fetch('http://localhost:8000/api/csrf/', {
       credentials: 'include'
     });
   }, []);
+
+  useEffect(() => {
+  if (!course) return;
+
+  fetch(`http://localhost:8000/api/enroll-status/?course_id=${id}`, {
+    credentials: 'include'
+  })
+    .then(res => {
+      if (res.status === 403) {
+        // not logged in
+        setIsEnrolled(false);
+        return;
+      }
+      return res.json();
+    })
+    .then(data => {
+      if (data) setIsEnrolled(data.enrolled);
+    })
+    .catch(err => console.error('Error checking enrollment status:', err));
+}, [course, id]);
 
 
   useEffect(() => {
@@ -81,6 +103,7 @@ const CourseDetail = () => {
 
   if (enrollResponse.ok) {
     Swal.fire("Congratulations...!!", "You purchased this course", "success");
+    setIsEnrolled(true);
   } else {
     Swal.fire("Error", data.detail || "Enrollment failed", "error");
   }
@@ -110,7 +133,11 @@ const CourseDetail = () => {
           <span>🔥 Offer ends in:</span>
           <span ref={timerRef}>Loading...</span>
         </div>
-        <button className="enroll-button" onClick={() => handleClick()}>Enroll Now</button>
+        {isEnrolled ? (
+          <button className="enroll-button-enrolled" disabled>✅ Enrolled</button>
+        ) : (
+          <button className="enroll-button" onClick={handleClick}>Enroll Now</button>
+        )}
       </div>
     </div>
 

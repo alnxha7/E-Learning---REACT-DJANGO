@@ -7,7 +7,7 @@ const Sidebar = () => {
       <ul className="sidebar-links">
         <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/dashboard/courses/">Courses</a></li>
-        <li><a href="#">My Courses</a></li>
+        <li><a href="/dashboard/my/courses">My Courses</a></li>
         <li><a href="/dashboard/profile/">Profile</a></li>
       </ul>
     </div>

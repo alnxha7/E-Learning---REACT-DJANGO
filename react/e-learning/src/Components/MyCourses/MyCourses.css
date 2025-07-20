@@ -1,0 +1,93 @@
+.my-courses-container {
+  padding: 40px 60px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.page-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.no-courses {
+  text-align: center;
+  font-size: 18px;
+  color: #999;
+}
+
+.course-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.course-list-item {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+
+.course-list-item:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.course-thumbnail {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 20px;
+}
+
+.course-info {
+  flex-grow: 1;
+}
+
+.course-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+.description {
+  margin: 6px 0 10px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+  max-height: 45px;
+  overflow: hidden;
+}
+
+.meta {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: #444;
+}
+
+.course-actions {
+  margin-left: auto;
+}
+
+.view-btn {
+  padding: 8px 14px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.view-btn:hover {
+  background-color: #219653;
+}

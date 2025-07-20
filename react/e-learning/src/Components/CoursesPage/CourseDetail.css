@@ -260,3 +260,16 @@
   font-weight: 600;
   margin-right: 4px;
 }
+
+.enroll-button-enrolled {
+  background-color: #4CAF50;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 7px 125px 26px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
